@@ -34,14 +34,14 @@ class todoservice {
 
   delete_todo(id) {
     delete this.todos.todo[id];
-    console.log("before 999: ", this.todos);
-
     this.todos.todo.splice(id, 1);
-    console.log("999: ", this.todos);
     return this.todos;
   }
 
-  update_todo(id, todo) {}
+  update_todo(id, todo) {
+    this.todos.todo[id] = todo;
+    return this.todos;
+  }
 }
 
 module.exports = todoservice;
