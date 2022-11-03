@@ -30,12 +30,15 @@ class todoservice {
   add_todo(todo) {
     this.todos.todo.push(todo);
     return this.todos;
-
-    // Your code here
   }
 
   delete_todo(id) {
-    // Your code here
+    delete this.todos.todo[id];
+    console.log("before 999: ", this.todos);
+
+    this.todos.todo.splice(id, 1);
+    console.log("999: ", this.todos);
+    return this.todos;
   }
 
   update_todo(id, todo) {}
