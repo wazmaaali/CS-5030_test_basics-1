@@ -30,15 +30,18 @@ class todoservice {
   add_todo(todo) {
     this.todos.todo.push(todo);
     return this.todos;
-
-    // Your code here
   }
 
   delete_todo(id) {
-    // Your code here
+    delete this.todos.todo[id];
+    this.todos.todo.splice(id, 1);
+    return this.todos;
   }
 
-  update_todo(id, todo) {}
+  update_todo(id, todo) {
+    this.todos.todo[id] = todo;
+    return this.todos;
+  }
 }
 
 module.exports = todoservice;

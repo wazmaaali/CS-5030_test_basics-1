@@ -10,6 +10,16 @@ describe("todo test suite", () => {
     description: "D4",
     done: false,
   };
+  var id = 1;
+
+  var _id = 2;
+
+  var t_ = {
+    title: "T3",
+    description: "D3",
+    done: true,
+  };
+
   test("if service instance is created", () => {
     expect(todo_service instanceof todoservice).toBe(true);
   });
@@ -22,6 +32,10 @@ describe("todo test suite", () => {
   test("add_todo", () => {
     expect(todo_service.add_todo(t).todo.length).toEqual(4);
   });
-
-  // Write all your test cases here that corresponds to software requirements
+  test("delete_todo", () => {
+    expect(todo_service.delete_todo(id).todo.length).toEqual(3);
+  });
+  test("update_todo", () => {
+    expect(todo_service.update_todo(_id, t_).todo[2]).toEqual(t_);
+  });
 });
